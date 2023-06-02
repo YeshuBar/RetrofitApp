@@ -2,6 +2,7 @@ package com.example.retrofitapp.viewmodels
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.retrofitapp.ToDoRepoFactory
 import com.example.retrofitapp.models.ToDo
 import com.example.retrofitapp.repositories.TodoRepo
 import com.example.retrofitapp.repositories.TodoRepoImpl
@@ -41,4 +42,10 @@ class TodoViewmodel() : ViewModel() {
             })
         }
     }
+//    fun getToDosFromDataBase() {
+//        viewModelScope.launch(Dispatchers.IO) {
+//            val listOfToDos = ToDoRepoFactory.repository.getTodosFromRemote()
+//            toDoLiveData.postValue(listOfToDos)
+//        }
+//    }
 }

@@ -3,11 +3,12 @@ package com.example.retrofitapp.activities
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.retrofitapp.PostAdapter
 import com.example.retrofitapp.ToDoAdapter
 import com.example.retrofitapp.databinding.ActivityMainBinding
-import com.example.retrofitapp.models.ToDo
+import com.example.retrofitapp.viewmodels.PostViewmodel
 import com.example.retrofitapp.viewmodels.TodoViewmodel
 
 class MainActivity : AppCompatActivity() {
@@ -22,26 +23,37 @@ class MainActivity : AppCompatActivity() {
 
         val toDoViewModel: TodoViewmodel by viewModels()
 
-        toDoViewModel.toDoLiveData.observe(this, {
-            print("bla")
-        })
-
-        toDoViewModel.getToDos()
-
 //        val toDoViewModel2 = ViewModelProvider(this).get(TodoViewmodel::class.java)
-
-        toDoViewModel.toDoLiveData.observe(this)
-        {
+        toDoViewModel.toDoLiveData.observe(this) {
             binding.todoRv.addItemDecoration(
                 DividerItemDecoration(
                     binding.todoRv.context,
                     DividerItemDecoration.VERTICAL
                 )
             )
-            val toDoAdapter =
-                ToDoAdapter(it, this@MainActivity)
+
+            val toDoAdapter = ToDoAdapter(it)
             binding.todoRv.adapter = toDoAdapter
         }
+
+        toDoViewModel.getToDos()
+
+        val postViewmodel: PostViewmodel by viewModels()
+
+        postViewmodel.postLiveData.observe(this) {
+            binding.postRv.addItemDecoration(
+                DividerItemDecoration(
+                    binding.postRv.context,
+                    DividerItemDecoration.VERTICAL
+                )
+            )
+            val postAdapter =
+                PostAdapter(it)
+            binding.postRv.adapter = postAdapter
+        }
+
+        postViewmodel.getPosts()
+
     }
 }
 

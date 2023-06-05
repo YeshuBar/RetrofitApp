@@ -3,41 +3,41 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/arr_todo"
-
+    android:id="@+id/arr_post"
+    android:backgroundTint="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
-        android:id="@+id/todo_user_id"
+        android:id="@+id/post_user_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        tools:text="yoyo"
+        tools:text="hey hey"
         android:padding="@dimen/cardview_default_radius"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/todo_id"
+        android:id="@+id/post_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:padding="@dimen/cardview_default_radius"
-        app:layout_constraintTop_toBottomOf="@+id/todo_user_id" />
+        app:layout_constraintTop_toBottomOf="@+id/post_user_id" />
 
     <TextView
-        android:id="@+id/todo_title"
+        android:id="@+id/post_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:padding="@dimen/cardview_default_radius"
-        app:layout_constraintTop_toBottomOf="@+id/todo_id" />
+        app:layout_constraintTop_toBottomOf="@+id/post_id" />
 
     <TextView
-        android:id="@+id/todo_completed"
+        android:id="@+id/post_body"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:padding="@dimen/cardview_default_radius"
-        app:layout_constraintTop_toBottomOf="@+id/todo_title" />
+        app:layout_constraintTop_toBottomOf="@+id/post_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

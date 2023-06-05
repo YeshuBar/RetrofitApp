@@ -4,12 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.retrofitapp.activities.MainActivity
 import com.example.retrofitapp.models.ToDo
 
-class ToDoAdapter(var todos: List<ToDo>, var onToDoClickListener: MainActivity) :
+class ToDoAdapter(var todos: List<ToDo>) :
     RecyclerView.Adapter<ToDoAdapter.ToDoViewHolder>() {
 
     class ToDoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -26,7 +25,7 @@ class ToDoAdapter(var todos: List<ToDo>, var onToDoClickListener: MainActivity) 
     }
 
     override fun onBindViewHolder(holder: ToDoViewHolder, position: Int) {
-        val todo = todos[position]
+        val todo = todos [position]
         holder.toDoUserId.text = todo.userId.toString()
         holder.toDoId.text = todo.id.toString()
         holder.toDoTitle.text = todo.title

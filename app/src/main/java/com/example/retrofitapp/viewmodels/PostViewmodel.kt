@@ -3,9 +3,9 @@ package com.example.retrofitapp.viewmodels
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.retrofitapp.RepoFactory
+import com.example.retrofitapp.repositories.RepoFactory
 import com.example.retrofitapp.models.Post
-import com.example.retrofitapp.models.State
+import com.example.retrofitapp.enums.State
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback

@@ -1,4 +1,4 @@
-package com.example.retrofitapp
+package com.example.retrofitapp.repositories
 
 import com.example.retrofitapp.repositories.Repo
 import com.example.retrofitapp.repositories.RepoImpl

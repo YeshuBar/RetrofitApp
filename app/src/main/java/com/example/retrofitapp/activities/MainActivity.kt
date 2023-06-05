@@ -4,9 +4,8 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.retrofitapp.PostAdapter
-import com.example.retrofitapp.ToDoAdapter
+import com.example.retrofitapp.adapter.PostAdapter
+import com.example.retrofitapp.adapter.ToDoAdapter
 import com.example.retrofitapp.databinding.ActivityMainBinding
 import com.example.retrofitapp.viewmodels.PostViewmodel
 import com.example.retrofitapp.viewmodels.TodoViewmodel

@@ -1,7 +1,7 @@
 package com.example.retrofitapp.utilities
 
 import com.example.retrofitapp.services.PostService
-import com.example.retrofitapp.services.TodoService
+import com.example.retrofitapp.services.CommentService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -13,6 +13,6 @@ object RetrofitSingleton {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    val todoService: TodoService = retrofit.create(TodoService::class.java)
+    val commentService: CommentService = retrofit.create(CommentService::class.java)
     val postService: PostService = retrofit.create(PostService::class.java)
 }

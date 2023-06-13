@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">RetrofitApp</string>
+    <string name="comment_manager">Comment\n Manager</string>
+    <string name="post_manager">Post\n Manager</string>
+    <string name="fetch_comment_remote">Fetch Comments\n From Remote</string>
+    <string name="fetch_comment_local">Fetch Comments\n From Local</string>
+    <string name="fetch_post_remote">Fetch Posts\n From Remote</string>
+    <string name="fetch_post_local">Fetch Posts\n From Local</string>
+    <string name="please_fetch_first">Please fetch from remote first</string>
 </resources>
+

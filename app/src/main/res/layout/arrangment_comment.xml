@@ -3,12 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/arr_todo"
+    android:id="@+id/arr_comment"
 
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
-        android:id="@+id/todo_user_id"
+        android:id="@+id/comment_post_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
@@ -17,27 +17,35 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/todo_id"
+        android:id="@+id/comment_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:padding="@dimen/cardview_default_radius"
-        app:layout_constraintTop_toBottomOf="@+id/todo_user_id" />
+        app:layout_constraintTop_toBottomOf="@+id/comment_post_id" />
 
     <TextView
-        android:id="@+id/todo_title"
+        android:id="@+id/comment_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:padding="@dimen/cardview_default_radius"
-        app:layout_constraintTop_toBottomOf="@+id/todo_id" />
+        app:layout_constraintTop_toBottomOf="@+id/comment_id" />
 
     <TextView
-        android:id="@+id/todo_completed"
+        android:id="@+id/comment_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:padding="@dimen/cardview_default_radius"
-        app:layout_constraintTop_toBottomOf="@+id/todo_title" />
+        app:layout_constraintTop_toBottomOf="@+id/comment_name" />
+
+    <TextView
+        android:id="@+id/comment_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:padding="@dimen/cardview_default_radius"
+        app:layout_constraintTop_toBottomOf="@+id/comment_email" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

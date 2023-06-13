@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.retrofitapp.R
 import com.example.retrofitapp.adapter.PostAdapter
 import com.example.retrofitapp.databinding.ActivityPostBinding
+import com.example.retrofitapp.models.Post
 import com.example.retrofitapp.viewmodels.PostViewModel
 
 class PostActivity : AppCompatActivity() {
@@ -20,53 +21,57 @@ class PostActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        val postViewModel: PostViewModel by viewModels()
+
         binding.fetchPostRemote.setOnClickListener {
 
-            val postViewModel: PostViewModel by viewModels()
 
             postViewModel.postLiveData.observe(this) {
-                binding.postRv.addItemDecoration(
-                    DividerItemDecoration(
-                        binding.postRv.context,
-                        DividerItemDecoration.VERTICAL
-                    )
-                )
-                val postAdapter =
-                    PostAdapter(it)
-                binding.postRv.adapter = postAdapter
+                postAdapter(it)
             }
 
             postViewModel.getPosts()
 
         }
-        binding.fetchPostLocal.setOnClickListener{
-
-            val postViewModel: PostViewModel by viewModels()
+        binding.fetchPostLocal.setOnClickListener {
 
             postViewModel.postLiveData.observe(this) {
                 if (it.isEmpty()) {
-                AlertDialog.Builder(this)
-                    .setTitle(getString(R.string.please_fetch_first))
-                    .setMessage(getString(R.string.please_fetch_first))
-                    .setPositiveButton(android.R.string.ok) { dialog, _ ->
-                        dialog.dismiss()
-                    }
-                    .show()
-            } else {
-                    binding.postRv.addItemDecoration(
-                        DividerItemDecoration(
-                            binding.postRv.context,
-                            DividerItemDecoration.VERTICAL
-                        )
-                    )
+                    AlertDialog.Builder(this)
+                        .setTitle(getString(R.string.please_fetch_first))
+                        .setMessage(getString(R.string.please_fetch_first))
+                        .setPositiveButton(android.R.string.ok) { dialog, _ ->
+                            dialog.dismiss()
+                        }
+                        .show()
+                } else {
+                    postAdapter(it)
 
-                    val postAdapter = PostAdapter(it)
-                    binding.postRv.adapter = postAdapter
+
                 }
-
             }
             postViewModel.getPostsFromDB()
-
         }
+    }
+
+    fun postAdapter(posts: List<Post>) {
+        binding.postRv.addItemDecoration(
+            DividerItemDecoration(
+                binding.postRv.context,
+                DividerItemDecoration.VERTICAL
+            )
+        )
+        val postAdapter = PostAdapter(posts)
+        binding.postRv.adapter = postAdapter
+    }
+
+
+    fun bla() {
+       val number = 5
+        bla2(number)
+    }
+
+    fun bla2(number: Int) {
+        number
     }
 }

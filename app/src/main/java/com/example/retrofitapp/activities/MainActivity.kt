@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.retrofitapp.databinding.ActivityMainBinding
 import com.example.retrofitapp.repositories.RepoFactory
 
+// Make a list of the following:
+// 1. Code that can be removed
+// 2. Code that can be consolidated
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding

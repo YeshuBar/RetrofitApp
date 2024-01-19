@@ -9,7 +9,7 @@ Ich habe eine abstrakte layer Repository implementiert, die eine Verbindung zwis
 Ich habe auch eine VM implementiert, die sich um die Logik kümmert und ihre Beobachter benachrichtigt, wenn neue Daten verfügbar sind.
 Verwendung von LiveData für einen reibungslosen Datenstrom zwischen der VM und der Aktivität.
 RecyclerView mit einem benutzerdefinierten Adapter zur Anzeige der Daten verwendet.
-**Implementierung eines SplashScreens unter Verwendung der neuen API.
+** Implementierung eines SplashScreens unter Verwendung der neuen API.
 Bei der Implementierung des Projekts wurde eine agile Methodik verwendet.
 Implementierung des Projekts unter Verwendung dynamischer Ressourcen (strings.xml/colors.xml/dimens.xml).
 
@@ -23,6 +23,6 @@ Implemented an abstract layer Repository that connects between the VM and the da
 I also implemented a VM that takes care of the logic, and notifies its observers when new data is available.
 Used LiveData for a smooth stream of data between the VM and the activity.
 Used RecyclerView with a custom Adapter to display the data.
-**Implemented a SplashScreen using the new API.
+** Implemented a SplashScreen using the new API.
 Used an Agile methodology while implementing the project.
 Implemented the project while using dynamic resources (strings.xml/colors.xml/dimens.xml).
